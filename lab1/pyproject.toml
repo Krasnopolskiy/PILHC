@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "lab1"
+version = "0.1.0"
+package-mode = false
+description = ""
+authors = ["Ivan Krasnopolsky <i1.krasnopolskiy@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+isort = "^6.0.0"
+
+[tool.black]
+line-length = 120
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
