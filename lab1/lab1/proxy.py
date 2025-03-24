@@ -84,15 +84,6 @@ def get_packet_from_queue_or_dummy(packet_queue: queue.Queue) -> bytes:
         return dummy
 
 
-def get_packet_from_queue_or_dummy(packet_queue: queue.Queue) -> bytes:
-    try:
-        return packet_queue.get_nowait()
-    except queue.Empty:
-        dummy = generate_dummy_packet()
-        logger.info("Generated dummy packet: %r", dummy)
-        return dummy
-
-
 def get_next_bit(secret_bits: list[int], current_bit_index: int) -> tuple[int, int]:
     if current_bit_index >= len(secret_bits):
         current_bit_index = 0
